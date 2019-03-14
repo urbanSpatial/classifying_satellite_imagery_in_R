@@ -8,7 +8,7 @@ In the diagram below for example, the built-up area, bare soil, and forest will 
 
 <center>
 
-<img src="/images/remoteSensingDiagram-01.png" style="width:100px; height:50px"> Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)></img>
+<img src="/images/remoteSensingDiagram-01.png" style="width:75px; height:40px"> Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)></img>
 
 </center>
 
