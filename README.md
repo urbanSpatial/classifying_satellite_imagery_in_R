@@ -8,7 +8,7 @@ In the diagram below for example, the built-up area, bare soil, and forest will 
 
 <center>
 
-<img src="/images/remoteSensingDiagram-01.png" style="width:75%; height:75%"> Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)></img>
+<img src="/images/remoteSensingDiagram-01.png" style="width:50%; height:50%"> Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)></img>
 
 </center>
 
@@ -96,7 +96,7 @@ plotRGB(image, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin", main = "True C
 box(col="white")
 ```
 
-<img src="/images/"truepositive.png"></img>
+<img src="/images/truepositive.png"></img>
 
 The false color composite is popular in remote sensing because it makes vegetation appear red. Below we use NIR (5) for red, red (4) for green, and green (3) for blue.
 
@@ -105,6 +105,8 @@ par(col.axis="white",col.lab="white",tck=0)
 plotRGB(image, r = 5, g = 4, b = 3, axes = TRUE, stretch = "lin", main = "False Color Composite")
 box(col="white")
 ```
+
+<img src="/images/falsepositive.png"></img>
 
 The plot shows dense vegetation in red and areas of more developed land in blue. When assessing if this is an accurate representation, it is important to consider the time of year. This imagery was taken in the winter and there are several pockets of open space that appear brown. These areas could have more vegetation in other parts of the year.
 
@@ -143,6 +145,8 @@ ggplot() +
                       high = "#087F28",
                       name = "NDVI")
 ```
+
+<img src="/images/ndvi.png"></img>
 
 If we compare the result to the false color composite created above, the areas with a higher NDVI correspond to the pockets of red that indicate more vegetation.
 
@@ -252,6 +256,8 @@ matrix %>%
         axis.ticks = element_blank())
 ```
 
+<img src="/images/spectralprofile.png"></img>
+
 ### Classifying the imagery
 
 We perform supervised classification on the imagery employing a decision tree algorithm. This type of algorithm uses a ‘tree’ structure to identify the best model that fits the data.
@@ -290,6 +296,8 @@ levelplot(pr, maxpixels = 1e6,
           scales=list(draw=FALSE),
           main = "Supervised Classification of Imagery")
 ```
+
+<img src="/images/finalclassification.png"></img>
 
 Are these results reasonable? We evaluate how well the model predicted by creating a confusion matrix that compares the predicted class to the observed ('ground-truthed') class.
 
