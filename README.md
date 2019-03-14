@@ -16,4 +16,6 @@ For this tutorial, we use Landsat 8 imagery from Calgary, which can be found on 
 
 We perform supervised classification on the imagery employing a decision tree algorithm. Supervised classification is the process of training a predictive model on ‘ground-truthed’ land cover observations (pixels we know definitively are forest or farmland) and subjecting that model onto new data to predict the land cover class.
 
+Here are the results. 
+
 <img src="/images/finalclassification.png"></img>
