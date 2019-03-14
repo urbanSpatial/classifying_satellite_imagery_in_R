@@ -8,7 +8,7 @@ In the diagram below for example, the built-up area, bare soil, and forest will 
 
 <center>
 
-![Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)](remoteSensingDiagram-01.png){style="width:75%; height:75%"}
+<img src="/images/remoteSensingDiagram-01.png" style="width:75%; height:75%"> Source: [Centre for Remote Imaging, Sensing & Processing](https://crisp.nus.edu.sg/~research/tutorial/optical.htm)></img>
 
 </center>
 
@@ -96,7 +96,7 @@ plotRGB(image, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin", main = "True C
 box(col="white")
 ```
 
-![](/images/"truepositive.png")
+<img src="/images/"truepositive.png"></img>
 
 The false color composite is popular in remote sensing because it makes vegetation appear red. Below we use NIR (5) for red, red (4) for green, and green (3) for blue.
 
