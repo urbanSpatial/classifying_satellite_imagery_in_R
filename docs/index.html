@@ -419,9 +419,9 @@ ggplot() +
 <li><p>In the end, we should have a similar number of classification points for each category.</p></li>
 <li><p>The points should be distributed relatively equally over the study area.</p></li>
 </ol>
-<p>For this example, I have created about 150 points for each category. When creating the points for undeveloped land, it may helpful to view the false color composite to make vegetation stand out as red.</p>
+<p>For this example, I have created about 150 points for each category. When creating the points for undeveloped land, it may be helpful to view the false color composite to make vegetation stand out as red.</p>
 <pre class="r"><code>points &lt;- viewRGB(image, r = 4, g = 3, b = 2) %&gt;% editMap()</code></pre>
-<p><code>points</code> is returned as a list. The code below extracts the final classification points for each type, converts the training points to an sf object, and adds two fields, <code>class</code> and <code>id</code>.</p>
+<p><code>points</code> is returned as a list. The following code extracts the final classification points for each type, converts the training points to an sf object, and adds two fields, <code>class</code> and <code>id</code>.</p>
 <pre class="r"><code>clouds &lt;- points$finished$geometry %&gt;% st_sf() %&gt;% mutate(class = &quot;clouds&quot;, id = 1)
 developed &lt;- points$finished$geometry %&gt;% st_sf() %&gt;% mutate(class = &quot;developed&quot;, id = 2)
 undeveloped &lt;- points$finished$geometry %&gt;% st_sf() %&gt;% mutate(class = &quot;undeveloped&quot;, id = 3)
@@ -496,7 +496,7 @@ head(matrix)</code></pre>
 <h3>Classifying the imagery</h3>
 <p>We perform supervised classification on the imagery employing a decision tree algorithm. This type of algorithm uses a ‘tree’ structure to identify the best model that fits the data.</p>
 <p>Decision trees start with the best predictor and continually subset the data. The if/else ‘decisions’ are represented as ‘nodes’ and the outcomes from the decisions become ‘leaves’ on the tree. The algorithm will use these rules to determine what the predicted outcome should be.</p>
-<p>First, combine the class and the extracted values into a dataframe. Then using <code>rpart</code>, we train the model.</p>
+<p>First, we combine the class and the extracted values into a dataframe. Then using <code>rpart</code>, we train the model.</p>
 <pre class="r"><code>df &lt;- data.frame(training_points$class, df)
 
 model.class &lt;- rpart(as.factor(training_points.class)~., data = df, method = 'class')</code></pre>
@@ -558,7 +558,7 @@ confMatrix</code></pre>
 ## Detection Rate         0.1917   0.2269   0.3207   0.1538
 ## Detection Prevalence   0.2073   0.2490   0.3442   0.1995
 ## Balanced Accuracy      0.9524   0.8893   0.9427   0.9410</code></pre>
-<p>In the confusion matrix, <em>Sensitivity</em> refers to the grid cells that were predicted to be a specific land cover and were actually that land cover. On average, across all four categories, we predicted 92.5% of ground-truthed points as such.</p>
+<p>In the confusion matrix, <em>Sensitivity</em> refers to the grid cells that were predicted to be a specific land cover and were actually that land cover. We can see that the model is more error prone in predicting developed land correctly.</p>
 <p>The confusion matrix also tells us that overall, we predicted 0.89309, or 89.3%, of the sample points correctly.</p>
 </div>
 </div>
