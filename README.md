@@ -96,6 +96,8 @@ plotRGB(image, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin", main = "True C
 box(col="white")
 ```
 
+![](/images/"truepositive.png")
+
 The false color composite is popular in remote sensing because it makes vegetation appear red. Below we use NIR (5) for red, red (4) for green, and green (3) for blue.
 
 ```{r}
