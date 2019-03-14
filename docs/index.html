@@ -390,10 +390,10 @@ box(col=&quot;white&quot;)</code></pre>
 
 ndvi &lt;- vi(image, 4,5)</code></pre>
 <p>To plot the results with <code>ggplot</code>, we convert the raster into a data frame and use <code>geom_tile</code>.</p>
-<pre class="r"><code>ndvi_forplotting &lt;- as(ndvi, &quot;SpatialPixelsDataFrame&quot;) %&gt;% as.data.frame()
-
-ggplot() +
-  geom_tile(data = ndvi_forplotting, aes(x = x, y = y, fill = layer)) +
+<pre class="r"><code>as(ndvi, &quot;SpatialPixelsDataFrame&quot;) %&gt;% 
+  as.data.frame() %&gt;%
+  ggplot(data = .) +
+  geom_tile(aes(x = x, y = y, fill = layer)) +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.background = element_blank(),
