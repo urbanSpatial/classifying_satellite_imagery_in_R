@@ -18,4 +18,4 @@ We perform supervised classification on the imagery employing a decision tree al
 
 Here are the results.
 
-<img src="/images/finalclassification.png"></img>
+<img src="/images/classification_results.png"></img>
